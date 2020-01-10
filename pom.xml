@@ -8,7 +8,7 @@
   <artifactId>Countries</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Countries01</name>
+  <name>Countries</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
