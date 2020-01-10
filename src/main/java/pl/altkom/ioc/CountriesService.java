@@ -2,14 +2,13 @@ package pl.altkom.ioc;
 
 import pl.altkom.ioc.finders.CsvFileCountriesFinder;
 
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class CountriesService {
     public static List<Country> getEuropeanCountries() {
-        CountriesFinder finder = new CsvFileCountriesFinder(Paths.get("countries.csv"));
+        CountriesFinder finder = new CsvFileCountriesFinder("countries.csv");
         List<Country> countries = finder.getCountries();
         return filterByContinent(countries, "Europe");
     }

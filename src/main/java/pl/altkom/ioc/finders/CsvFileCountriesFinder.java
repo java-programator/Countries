@@ -1,25 +1,23 @@
 package pl.altkom.ioc.finders;
 
-import pl.altkom.ioc.CountriesFinder;
 import pl.altkom.ioc.Country;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CsvFileCountriesFinder implements CountriesFinder {
-    private Path filePath;
+public class CsvFileCountriesFinder extends FileCountriesFinder {
 
-    public CsvFileCountriesFinder(Path filePath) {
-        this.filePath = filePath;
+    public CsvFileCountriesFinder(String filePath) {
+        super(filePath);
     }
 
     @Override
     public List<Country> getCountries() {
         try {
-            return Files.readAllLines(filePath).stream().map(s -> {
+            return Files.readAllLines(Paths.get(filePath)).stream().map(s -> {
                 String[] a = s.split(";");
                 return new Country(a[0], a[1]);
             }).collect(Collectors.toList());
