@@ -10,6 +10,9 @@ import java.util.stream.Collectors;
 
 public class CsvFileCountriesFinder extends FileCountriesFinder {
 
+    public CsvFileCountriesFinder() {
+    }
+
     public CsvFileCountriesFinder(String filePath) {
         super(filePath);
     }
@@ -26,4 +29,7 @@ public class CsvFileCountriesFinder extends FileCountriesFinder {
             return null;
         }
     }
+
+
+
 }
